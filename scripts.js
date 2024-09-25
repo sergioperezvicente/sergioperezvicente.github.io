@@ -8,32 +8,23 @@ window.addEventListener("load", function () {
   }, 1500);
 });
 document.addEventListener("DOMContentLoaded", function () {
-    const detailColumns = document.querySelectorAll(".detail-column");
-    detailColumns.forEach((column, index) => {
-      setTimeout(function () {
-        column.classList.add("show");
-      }, 300 * index);
+  const animateColumns = (selector) => {
+    const columns = document.querySelectorAll(selector);
+    columns.forEach((column, index) => {
+      setTimeout(() => column.classList.add("show"), 300 * index);
     });
-    const dateColumns = document.querySelectorAll(".date-column");
-    dateColumns.forEach((column, index) => {
-      setTimeout(function () {
-        column.classList.add("show");
-      }, 300 * index);
-    });
-  });
-document.addEventListener("DOMContentLoaded", function () {
+  };
+  animateColumns(".detail-column");
+  animateColumns(".date-column");
   const text = "SERGIO PÉREZ VICENTE";
   let index = 0;
   const speed = 250;
   const typedTextElement = document.getElementById("typed-text");
-
-  function typeWriter() {
+  const typeWriter = () => {
     if (index < text.length) {
-      typedTextElement.textContent += text.charAt(index);
-      index++;
+      typedTextElement.textContent += text.charAt(index++);
       setTimeout(typeWriter, speed);
     }
-  }
-
+  };
   typeWriter();
 });
