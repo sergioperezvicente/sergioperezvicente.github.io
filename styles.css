@@ -249,7 +249,7 @@ header {
   animation: fadeOut 1s forwards;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   aside,
   main {
     min-height: auto;
