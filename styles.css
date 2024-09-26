@@ -26,7 +26,7 @@ p {
 }
 
 ul {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 aside {
@@ -38,9 +38,12 @@ aside {
   padding-left: 50px;
   color: #bdbdbd;
   z-index: 1;
+  top: 0;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 24px 25px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transform: translateY(-100%);
+  animation: slideDown 2.5s ease forwards;
 }
 
 main {
@@ -255,6 +258,15 @@ header {
   100% {
     opacity: 0;
     pointer-events: none;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
 
