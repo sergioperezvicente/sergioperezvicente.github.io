@@ -28,6 +28,7 @@ p {
 ul {
     margin-left: 20px;
 }
+
 aside {
   flex: 0.6;
   background-image: url(images/background.png);
@@ -142,6 +143,7 @@ header {
   align-items: center;
   display: flex;
 }
+
 .skills {
   color: #d69b1b;
 }
@@ -222,10 +224,14 @@ header {
   transform: rotate(-90deg);
 }
 
+.loading-screen.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
 #typed-text::after {
-  content: "|"; /* El cursor */
+  content: "|";
   opacity: 1;
-  animation: blink 0.7s infinite; /* Parpadeo del cursor */
+  animation: blink 0.7s infinite;
 }
 
 @keyframes blink {
@@ -239,6 +245,7 @@ header {
     opacity: 1;
   }
 }
+
 @keyframes fadeOut {
   0% {
     opacity: 1;
@@ -247,10 +254,6 @@ header {
     opacity: 0;
     pointer-events: none;
   }
-}
-
-.loading-screen.fade-out {
-  animation: fadeOut 1s forwards;
 }
 
 @media (max-width: 768px) {
@@ -266,6 +269,7 @@ header {
     border-radius: 50%;
     object-fit: cover;
   }
+
   .container {
     flex-direction: column;
   }
